@@ -1,11 +1,9 @@
 #include<stdio.h>
-int isPrime(int n);
-int main()
+void main()
 {
     int n;
     scanf("%d",&n);
-    int res = isPrime(n);
-    if(res==1)
+    if(isPrime(n)==1)
     {
         printf("prime");
     }
@@ -17,20 +15,12 @@ int main()
 int isPrime(int n)
 {
     int count=0,i=0;
-    for(i=1;i<=n;i++)
+    for(i=1;i<=n/2;i++)
     {
         if(n%i==0)
         {
-            count++;
+            return 0;
         }
     }
-        if (count==2)
-        {
-           return 1;
-        }
-        else
-        {
-            return 0;
-        }  
-         
+    return 1;
 }
